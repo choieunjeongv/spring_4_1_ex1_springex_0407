@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bmiCalculator" class="com.javaeunjeong.ex.BMICalculator">
+		<property name="lowweight">
+			<value>18.5</value>
+		</property>
+		<property name="normal">
+			<value>23</value>
+		</property>
+		<property name="overweight">
+			<value>25</value>
+		</property>
+		<property name="obesity">
+			<value>30</value>
+		</property>
+	</bean>
+	
+	<bean id="student1" class="com.javaeunjeong.ex.StudentInfo">
+		<property name="name">
+			<value>홍길동</value>
+		</property>
+		<property name="weight">
+			<value>70</value>
+		</property>
+		<property name="height">
+			<value>180</value>
+		</property>
+		<property name="bmiCalculator">
+			<ref bean="bmiCalculator"/>
+		</property>
+		<property name="hobbys">
+			<list>
+				<value>운동</value>
+				<value>요리</value>
+				<value>게임</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="student2" class="com.javaeunjeong.ex.StudentInfo">
+		<property name="name">
+			<value>김유신</value>
+		</property>
+		<property name="weight">
+			<value>90</value>
+		</property>
+		<property name="height">
+			<value>178</value>
+		</property>
+		<property name="bmiCalculator">
+			<ref bean="bmiCalculator"/>
+		</property>
+		<property name="hobbys">
+			<list>
+				<value>등산</value>
+				<value>영화</value>
+				<value>전투</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	
+</beans>
